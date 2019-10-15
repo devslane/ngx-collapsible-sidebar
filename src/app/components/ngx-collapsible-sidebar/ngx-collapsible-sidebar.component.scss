@@ -1,0 +1,19 @@
+.ngx-collapsible-sidebar {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+  overflow-y: scroll;
+
+  &.collapsed {
+    ::ng-deep .hide-on-collapse {
+      display: none;
+    }
+  }
+
+  &.expanded {
+    ::ng-deep .hide-on-collapse {
+      display: block;
+    }
+  }
+}
