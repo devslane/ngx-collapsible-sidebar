@@ -16,12 +16,27 @@ import {Page2Component} from './pages/page2.component';
 import {Page3Component} from './pages/page3.component';
 import {Page4Component} from './pages/page4.component';
 import {TruncatePipe} from './pipes/truncate.pipe';
+import {User1Component} from './pages/user1.component';
+import {User2Component} from './pages/user2.component';
+import {User3Component} from './pages/user3.component';
 
 const routes: Route[] = [
-  {path: 'page1', component: Page1Component},
+  {path: 'page1', component: Page1Component, children: [
+      {path: 'user1', component: User1Component},
+      {path: 'user2', component: User2Component},
+      {path: 'user3', component: User3Component}
+    ]},
   {path: 'page2', component: Page2Component},
-  {path: 'page3', component: Page3Component},
-  {path: 'page4', component: Page4Component}
+  {path: 'page3', component: Page3Component, children: [
+      {path: 'user1', component: User1Component},
+      {path: 'user2', component: User2Component},
+      {path: 'user3', component: User3Component}
+    ]},
+  {path: 'page4', component: Page4Component, children: [
+      {path: 'user1', component: User1Component},
+      {path: 'user2', component: User2Component},
+      {path: 'user3', component: User3Component}
+    ]}
 ];
 
 @NgModule({
@@ -37,7 +52,10 @@ const routes: Route[] = [
     Page2Component,
     Page3Component,
     Page4Component,
-    TruncatePipe
+    TruncatePipe,
+    User1Component,
+    User2Component,
+    User3Component
   ],
   imports: [
     BrowserModule,

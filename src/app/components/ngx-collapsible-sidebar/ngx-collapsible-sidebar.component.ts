@@ -27,7 +27,7 @@ export class NgxCollapsibleSidebarComponent implements AfterContentInit, OnDestr
 
   updateSelectedItem(url: string) {
     this.items.forEach(item => {
-      if (url.includes(item.routerLink)) {
+      if (url.includes(item.path)) {
         item.expand();
       } else {
         item.collapse();
