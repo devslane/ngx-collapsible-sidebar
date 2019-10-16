@@ -2,13 +2,22 @@
 
 .ngx-collapsible-sidebar-item {
   width: 100%;
-
-  &.highlight {
-    background-color: pink;
-  }
+  cursor: pointer;
+  outline: none;
 
   .header {
+    padding: 5px 10px;
+    box-sizing: border-box;
     @include fx-layout-with-gap(row, 5px);
     @include fx-layout-alignment(flex-start, center);
+
+    &.highlight {
+      background-color: pink;
+    }
+  }
+
+  .content {
+    padding: 5px 10px;
+    box-sizing: border-box;
   }
 }
