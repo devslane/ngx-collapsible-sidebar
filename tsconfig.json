@@ -20,9 +20,11 @@
     ],
     "paths": {
       "ngx-collapsible-sidebar": [
+        "dist/ngx-collapsible-sidebar",
         "dist/ngx-collapsible-sidebar"
       ],
       "ngx-collapsible-sidebar/*": [
+        "dist/ngx-collapsible-sidebar/*",
         "dist/ngx-collapsible-sidebar/*"
       ]
     }

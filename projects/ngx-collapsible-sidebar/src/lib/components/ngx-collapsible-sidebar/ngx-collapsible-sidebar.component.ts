@@ -1,7 +1,7 @@
 import {AfterContentInit, Component, ContentChildren, EventEmitter, Input, Output, QueryList} from '@angular/core';
 import {NgxCollapsibleSidebarItemComponent} from '../ngx-collapsible-sidebar-item/ngx-collapsible-sidebar-item.component';
-import {Unsubscribe} from '../unsubscribe';
 import {takeUntil} from 'rxjs/operators';
+import {Unsubscribe} from '../unsubscribe';
 
 @Component({
   selector: 'ngx-collapsible-sidebar',

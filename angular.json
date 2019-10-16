@@ -159,6 +159,7 @@
           }
         }
       }
-    }},
+    }
+  },
   "defaultProject": "ngx-collapsible-sidebar-example"
 }
