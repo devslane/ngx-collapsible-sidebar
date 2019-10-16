@@ -5,5 +5,8 @@
     "@angular/common": "^8.2.9",
     "@angular/core": "^8.2.9",
     "@angular/material": "^8.2.3"
+  },
+  "dependencies": {
+    "ngx-auto-unsubscribe": "^3.0.1"
   }
 }

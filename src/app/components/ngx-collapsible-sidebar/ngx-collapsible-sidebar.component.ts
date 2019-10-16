@@ -1,45 +1,39 @@
-import {AfterContentInit, Component, ContentChildren, EventEmitter, Input, Output, QueryList} from '@angular/core';
+import {AfterContentInit, Component, ContentChildren, Input, OnDestroy, QueryList} from '@angular/core';
 import {NgxCollapsibleSidebarItemComponent} from '../ngx-collapsible-sidebar-item/ngx-collapsible-sidebar-item.component';
-import {Unsubscribe} from '../unsubscribe';
-import {NavigationStart, Router} from '@angular/router';
-import {takeUntil} from 'rxjs/operators';
+import {NavigationEnd, Router} from '@angular/router';
+import {filter} from 'rxjs/operators';
+import {AutoUnsubscribe} from 'ngx-auto-unsubscribe';
 
+@AutoUnsubscribe()
 @Component({
   selector: 'ngx-collapsible-sidebar',
   templateUrl: './ngx-collapsible-sidebar.component.html',
   styleUrls: ['./ngx-collapsible-sidebar.component.scss']
 })
-export class NgxCollapsibleSidebarComponent extends Unsubscribe implements AfterContentInit {
+export class NgxCollapsibleSidebarComponent implements AfterContentInit, OnDestroy {
   @Input() selectedItemRoute: string;
   @Input() collapsed: boolean;
   @ContentChildren(NgxCollapsibleSidebarItemComponent) items: QueryList<NgxCollapsibleSidebarItemComponent>;
-  @Output() itemSelected: EventEmitter<string> = new EventEmitter<string>();
 
-  constructor(private router: Router) {
-    super();
-  }
+  constructor(private router: Router) {}
 
   ngAfterContentInit(): void {
     if (this.selectedItemRoute) {
-      this.updateSelectedItem(this.selectedItemRoute, false);
+      this.updateSelectedItem(this.selectedItemRoute);
     }
-    this.router.events.pipe(takeUntil(this.destroyed$)).subscribe(event => {
-      if (event instanceof NavigationStart) {
-        this.updateSelectedItem(event.url, true);
-      }
-    });
+    this.router.events.pipe(filter(event => event instanceof NavigationEnd))
+      .subscribe((event: any) => this.updateSelectedItem(event.url));
   }
 
-  updateSelectedItem(url: string, emitEvent: boolean = false) {
+  updateSelectedItem(url: string) {
     this.items.forEach(item => {
       if (url.includes(item.routerLink)) {
         item.expand();
-        if (emitEvent) {
-          this.itemSelected.emit(item.routerLink);
-        }
       } else {
         item.collapse();
       }
     });
   }
+
+  ngOnDestroy(): void {}
 }
