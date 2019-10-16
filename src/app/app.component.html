@@ -1,33 +1,26 @@
 <ngx-collapsible-sidebar-container>
   <ngx-collapsible-sidebar [collapsed]="collapse">
-    <ngx-collapsible-sidebar-item>
-      <div class="row">
-        <mat-icon>delete</mat-icon>
-        <span ngxHideOnCollapse>Demo1</span>
-      </div>
+    <ngx-collapsible-sidebar-item title="Demo1" icon="add" routerLink="/page1">
+      <ngx-collapsible-sidebar-sub-item>
+        <h5>Heading</h5>
+      </ngx-collapsible-sidebar-sub-item>
     </ngx-collapsible-sidebar-item>
-    <ngx-collapsible-sidebar-item>
-      <div class="row">
-        <mat-icon>delete</mat-icon>
-        <span ngxHideOnCollapse>Demo2</span>
-      </div>
+    <ngx-collapsible-sidebar-item title="Demo2" icon="add" routerLink="/page2">
     </ngx-collapsible-sidebar-item>
-    <ngx-collapsible-sidebar-item>
-      <div class="row">
-        <mat-icon>delete</mat-icon>
-        <span ngxHideOnCollapse>Demo3</span>
-      </div>
+    <ngx-collapsible-sidebar-item title="Demo3" icon="add" routerLink="/page3">
+      <ngx-collapsible-sidebar-sub-item>
+        <h5>Heading</h5>
+      </ngx-collapsible-sidebar-sub-item>
     </ngx-collapsible-sidebar-item>
-    <ngx-collapsible-sidebar-item>
-      <div class="row">
-        <mat-icon>delete</mat-icon>
-        <span ngxHideOnCollapse>Demo4</span>
-      </div>
+    <ngx-collapsible-sidebar-item title="Demo4" icon="add" routerLink="/page4">
+      <ngx-collapsible-sidebar-sub-item>
+        <h5>Heading</h5>
+      </ngx-collapsible-sidebar-sub-item>
     </ngx-collapsible-sidebar-item>
   </ngx-collapsible-sidebar>
 
   <ngx-collapsible-sidebar-content>
-    <h1>Ngx Collapsible Sidebar</h1>
     <button (click)="collapse = !collapse">Toggle</button>
+    <router-outlet></router-outlet>
   </ngx-collapsible-sidebar-content>
 </ngx-collapsible-sidebar-container>

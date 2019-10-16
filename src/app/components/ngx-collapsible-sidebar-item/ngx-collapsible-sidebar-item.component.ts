@@ -1,24 +1,16 @@
-import {Component, EventEmitter, Input} from '@angular/core';
-import {StringUtils} from '../../utils/strings';
+import {Component, ContentChildren, Input, QueryList} from '@angular/core';
+import {NgxCollapsibleSidebarSubItemComponent} from '../ngx-collapsible-sidebar-sub-item/ngx-collapsible-sidebar-sub-item.component';
 
 @Component({
   selector: 'ngx-collapsible-sidebar-item',
-  template: `
-    <div class="ngx-collapsible-sidebar-item" (click)="itemSelect.emit(id)">
-      <ng-content></ng-content>
-    </div>
-  `,
-  styles: [`
-    .ngx-collapsible-sidebar-item {
-      width: 100%;
-    }
-  `]
+  templateUrl: './ngx-collapsible-sidebar-item.component.html',
+  styleUrls: ['./ngx-collapsible-sidebar-item.component.scss']
 })
 export class NgxCollapsibleSidebarItemComponent {
   @Input() title: string;
   @Input() icon: string;
-  @Input() id: string = StringUtils.getUniqueId();
-  itemSelect = new EventEmitter<string>();
+  @Input() routerLink: string;
+  @ContentChildren(NgxCollapsibleSidebarSubItemComponent) items: QueryList<NgxCollapsibleSidebarSubItemComponent>;
   private collapsed = true;
 
   collapse() {

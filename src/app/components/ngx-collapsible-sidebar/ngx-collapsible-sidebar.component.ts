@@ -1,37 +1,45 @@
 import {AfterContentInit, Component, ContentChildren, EventEmitter, Input, Output, QueryList} from '@angular/core';
 import {NgxCollapsibleSidebarItemComponent} from '../ngx-collapsible-sidebar-item/ngx-collapsible-sidebar-item.component';
 import {Unsubscribe} from '../unsubscribe';
+import {NavigationStart, Router} from '@angular/router';
 import {takeUntil} from 'rxjs/operators';
 
 @Component({
   selector: 'ngx-collapsible-sidebar',
-  template: `
-    <div class="ngx-collapsible-sidebar" [ngClass]="collapsed ? 'collapsed' : 'expanded'">
-      <ng-content></ng-content>
-    </div>
-  `,
+  templateUrl: './ngx-collapsible-sidebar.component.html',
   styleUrls: ['./ngx-collapsible-sidebar.component.scss']
 })
 export class NgxCollapsibleSidebarComponent extends Unsubscribe implements AfterContentInit {
-  @Input() selectedItemId: string;
+  @Input() selectedItemRoute: string;
   @Input() collapsed: boolean;
   @ContentChildren(NgxCollapsibleSidebarItemComponent) items: QueryList<NgxCollapsibleSidebarItemComponent>;
   @Output() itemSelected: EventEmitter<string> = new EventEmitter<string>();
 
-  ngAfterContentInit(): void {
-    this.items.forEach(item => item.itemSelect.pipe(takeUntil(this.destroyed$))
-      .subscribe(itemId => this.updateSelectedItem(itemId)));
+  constructor(private router: Router) {
+    super();
   }
 
-  updateSelectedItem(itemId: string) {
-    this.selectedItemId = itemId;
+  ngAfterContentInit(): void {
+    if (this.selectedItemRoute) {
+      this.updateSelectedItem(this.selectedItemRoute, false);
+    }
+    this.router.events.pipe(takeUntil(this.destroyed$)).subscribe(event => {
+      if (event instanceof NavigationStart) {
+        this.updateSelectedItem(event.url, true);
+      }
+    });
+  }
+
+  updateSelectedItem(url: string, emitEvent: boolean = false) {
     this.items.forEach(item => {
-      if (item.id === itemId) {
+      if (url.includes(item.routerLink)) {
         item.expand();
+        if (emitEvent) {
+          this.itemSelected.emit(item.routerLink);
+        }
       } else {
         item.collapse();
       }
     });
-    this.itemSelected.emit(itemId);
   }
 }

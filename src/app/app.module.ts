@@ -10,6 +10,18 @@ import {NgxCollapsibleSidebarSubItemComponent} from './components/ngx-collapsibl
 import {NgxCollapsibleSidebarContainerComponent} from './components/ngx-collapsible-sidebar-container/ngx-collapsible-sidebar-container.component';
 import {NgxCollapsibleSidebarContentComponent} from './components/ngx-collapsible-sidebar-content/ngx-collapsible-sidebar-content.component';
 import {HideOnCollapseDirective} from './directives/hide-on-collapse.directive';
+import {Route, RouterModule} from '@angular/router';
+import {Page1Component} from './pages/page1.component';
+import {Page2Component} from './pages/page2.component';
+import {Page3Component} from './pages/page3.component';
+import {Page4Component} from './pages/page4.component';
+
+const routes: Route[] = [
+  {path: 'page1', component: Page1Component},
+  {path: 'page2', component: Page2Component},
+  {path: 'page3', component: Page3Component},
+  {path: 'page4', component: Page4Component}
+];
 
 @NgModule({
   declarations: [
@@ -19,12 +31,17 @@ import {HideOnCollapseDirective} from './directives/hide-on-collapse.directive';
     NgxCollapsibleSidebarContentComponent,
     NgxCollapsibleSidebarComponent,
     NgxCollapsibleSidebarItemComponent,
-    NgxCollapsibleSidebarSubItemComponent
+    NgxCollapsibleSidebarSubItemComponent,
+    Page1Component,
+    Page2Component,
+    Page3Component,
+    Page4Component
   ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
-    MaterialModule
+    MaterialModule,
+    RouterModule.forRoot(routes)
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,0 +1,14 @@
+@import "~src/app/sass/flex-styles";
+
+.ngx-collapsible-sidebar-item {
+  width: 100%;
+
+  &.highlight {
+    background-color: pink;
+  }
+
+  .header {
+    @include fx-layout-with-gap(row, 5px);
+    @include fx-layout-alignment(flex-start, center);
+  }
+}

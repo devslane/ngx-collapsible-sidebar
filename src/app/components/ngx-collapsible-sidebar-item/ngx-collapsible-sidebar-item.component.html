@@ -1,0 +1,9 @@
+<div class="ngx-collapsible-sidebar-item" [ngClass]="!collapsed ? 'highlight' : ''">
+  <div class="header">
+    <mat-icon>{{icon}}</mat-icon>
+    <span ngxHideOnCollapse>{{title}}</span>
+  </div>
+  <div *ngIf="!collapsed && items.length" ngxHideOnCollapse class="content">
+    <ng-content></ng-content>
+  </div>
+</div>
