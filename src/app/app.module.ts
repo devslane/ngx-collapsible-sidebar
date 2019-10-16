@@ -15,6 +15,7 @@ import {Page1Component} from './pages/page1.component';
 import {Page2Component} from './pages/page2.component';
 import {Page3Component} from './pages/page3.component';
 import {Page4Component} from './pages/page4.component';
+import {TruncatePipe} from './pipes/truncate.pipe';
 
 const routes: Route[] = [
   {path: 'page1', component: Page1Component},
@@ -35,7 +36,8 @@ const routes: Route[] = [
     Page1Component,
     Page2Component,
     Page3Component,
-    Page4Component
+    Page4Component,
+    TruncatePipe
   ],
   imports: [
     BrowserModule,
