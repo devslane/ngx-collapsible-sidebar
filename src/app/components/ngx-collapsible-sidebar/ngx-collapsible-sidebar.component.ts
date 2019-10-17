@@ -19,7 +19,7 @@ export class NgxCollapsibleSidebarComponent implements AfterContentInit, OnDestr
 
   ngAfterContentInit(): void {
     if (this.selectedItemRoute) {
-      this.updateSelectedItem(this.selectedItemRoute);
+      // this.router.navigate([this.selectedItemRoute]);
     }
     this.router.events.pipe(filter(event => event instanceof NavigationEnd))
       .subscribe((event: any) => this.updateSelectedItem(event.url));

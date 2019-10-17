@@ -20,12 +20,10 @@ export class NgxCollapsibleSidebarItemComponent implements AfterContentInit {
   }
 
   collapse() {
-    console.log('collapse', this.path);
     this.collapsed = true;
   }
 
   expand() {
-    console.log('expand', this.path);
     this.collapsed = false;
   }
 }
