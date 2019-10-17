@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import {Component, ContentChildren, QueryList} from '@angular/core';
+import {NgxCollapsibleSidebarItemComponent} from '../components/ngx-collapsible-sidebar-item/ngx-collapsible-sidebar-item.component';
 
 @Component({
   selector: 'ngx-user2',
