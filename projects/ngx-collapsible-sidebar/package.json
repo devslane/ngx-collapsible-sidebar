@@ -4,6 +4,7 @@
   "version": "1.0.0",
   "author": "DevsLane",
   "homepage": "https://github.com/devslane/ngx-collapsible-sidebar",
+  "license": "MIT",
   "keywords": [
     "angular",
     "sidebar",
