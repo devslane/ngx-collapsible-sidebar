@@ -8,6 +8,9 @@ import {HideOnCollapseDirective} from './directives/hide-on-collapse.directive';
 import {CommonModule} from '@angular/common';
 import {CollapsedSidebarItemDirective} from './directives/collapsed-sidebar-item.directive';
 import {ExpandedSidebarItemDirective} from './directives/expanded-sidebar-item.directive';
+import {TruncatePipe} from './pipes/truncate.pipe';
+import {MatIconModule} from '@angular/material';
+import {RouterModule} from '@angular/router';
 
 const components = [
   NgxCollapsibleSidebarContainerComponent,
@@ -26,10 +29,13 @@ const directives = [
 @NgModule({
   declarations: [
     ...directives,
+    TruncatePipe,
     ...components
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    MatIconModule,
+    RouterModule
   ],
   exports: [
     ...directives,
