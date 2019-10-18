@@ -1,6 +1,28 @@
 {
   "name": "ngx-collapsible-sidebar",
-  "version": "0.0.1",
+  "description": "A simple wrapper over mat-sidenav that gives the functionality for the collapsed view of the sidebar.",
+  "version": "1.0.0",
+  "author": "DevsLane",
+  "homepage": "https://github.com/devslane/ngx-collapsible-sidebar",
+  "keywords": [
+    "angular",
+    "sidebar",
+    "collapsible-sidebar",
+    "angular material"
+  ],
+  "bugs": {
+    "url": "https://github.com/devslane/ngx-collapsible-sidebar/issues/new"
+  },
+  "contributors": [
+    {
+      "name": "Kushagra Saxena",
+      "email": "kkss420@gmail.com"
+    },
+    {
+      "name": "Manu Bharadwaj",
+      "email": "immanubhardwaj@gmail.com"
+    }
+  ],
   "peerDependencies": {
     "@angular/common": "^8.2.9",
     "@angular/core": "^8.2.9",
