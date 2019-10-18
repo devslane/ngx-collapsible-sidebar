@@ -3,6 +3,7 @@ import {NgxCollapsibleSidebarItemComponent} from '../ngx-collapsible-sidebar-ite
 import {NavigationEnd, Router} from '@angular/router';
 import {filter} from 'rxjs/operators';
 import {AutoUnsubscribe} from 'ngx-auto-unsubscribe';
+import {Subscription} from 'rxjs';
 
 @AutoUnsubscribe()
 @Component({
@@ -14,6 +15,7 @@ export class NgxCollapsibleSidebarComponent implements AfterContentInit, OnDestr
   @Input() selectedItemRoute: string;
   @Input() collapsed: boolean;
   @ContentChildren(NgxCollapsibleSidebarItemComponent) items: QueryList<NgxCollapsibleSidebarItemComponent>;
+  routerEventsSubscription: Subscription;
 
   constructor(private router: Router) {}
 
@@ -21,7 +23,8 @@ export class NgxCollapsibleSidebarComponent implements AfterContentInit, OnDestr
     if (this.selectedItemRoute) {
       // this.router.navigate([this.selectedItemRoute]);
     }
-    this.router.events.pipe(filter(event => event instanceof NavigationEnd))
+    this.routerEventsSubscription = this.router.events
+      .pipe(filter(event => event instanceof NavigationEnd))
       .subscribe((event: any) => this.updateSelectedItem(event.url));
   }
 
