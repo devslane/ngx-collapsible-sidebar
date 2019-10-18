@@ -1,6 +1,10 @@
 <ngx-collapsible-sidebar-container>
   <ngx-collapsible-sidebar [collapsed]="collapse">
     <ngx-collapsible-sidebar-item title="Demo1 Heading" icon="add" path="/page1">
+      <ng-template ngxCollapsedSidebarItem>
+        <mat-icon>delete</mat-icon>
+      </ng-template>
+      <ng-template ngxExpandedSidebarItem>Hello this is test</ng-template>
       <ngx-collapsible-sidebar-sub-item title="User1" path="user1">
       </ngx-collapsible-sidebar-sub-item>
       <ngx-collapsible-sidebar-sub-item title="User2" path="user2">
