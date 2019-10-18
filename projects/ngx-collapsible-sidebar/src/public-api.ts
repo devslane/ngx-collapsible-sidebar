@@ -10,3 +10,4 @@ export * from './lib/components/ngx-collapsible-sidebar-sub-item/ngx-collapsible
 export * from './lib/directives/hide-on-collapse.directive';
 export * from './lib/directives/collapsed-sidebar-item.directive';
 export * from './lib/directives/expanded-sidebar-item.directive';
+export * from './lib/ngx-collapsible-sidebar.module';

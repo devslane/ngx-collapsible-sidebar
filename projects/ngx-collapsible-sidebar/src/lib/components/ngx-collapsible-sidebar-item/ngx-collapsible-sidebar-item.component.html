@@ -1,5 +1,5 @@
-<div class="ngx-collapsible-sidebar-item" [routerLink]="path">
-  <div class="header" [ngClass]="!collapsed ? 'highlight' : ''">
+<div [routerLink]="path" class="ngx-collapsible-sidebar-item">
+  <div [ngClass]="!collapsed ? 'highlight' : ''" class="header">
 
     <!--    Template Rendering for Collapsed Items-->
     <ng-container *ngIf="!collapsedItem">
@@ -21,7 +21,7 @@
       </div>
     </ng-container>
   </div>
-  <div *ngIf="!collapsed && items.length" ngxHideOnCollapse class="content">
+  <div *ngIf="!collapsed && items.length" class="content" ngxHideOnCollapse>
     <ng-content></ng-content>
   </div>
 </div>

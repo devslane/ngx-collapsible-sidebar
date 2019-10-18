@@ -28,18 +28,26 @@
   }
 
   @-webkit-keyframes slide-out {
-    100% { width: 180px; }
+    100% {
+      width: 180px;
+    }
   }
 
   @keyframes slide-out {
-    100% { width: 180px; }
+    100% {
+      width: 180px;
+    }
   }
 
   @-webkit-keyframes slide-in {
-    100% { width: 65px; }
+    100% {
+      width: 65px;
+    }
   }
 
   @keyframes slide-in {
-    100% { width: 65px; }
+    100% {
+      width: 65px;
+    }
   }
 }

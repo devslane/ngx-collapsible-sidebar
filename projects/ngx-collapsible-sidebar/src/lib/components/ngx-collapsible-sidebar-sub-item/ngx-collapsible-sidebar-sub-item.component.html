@@ -1,3 +1,4 @@
-<div class="ngx-collapsible-sidebar-sub-item" [routerLink]="path" (click)="$event.stopPropagation()" routerLinkActive="active">
+<div (click)="$event.stopPropagation()" [routerLink]="path" class="ngx-collapsible-sidebar-sub-item"
+     routerLinkActive="active">
   <span>{{title}}</span>
 </div>

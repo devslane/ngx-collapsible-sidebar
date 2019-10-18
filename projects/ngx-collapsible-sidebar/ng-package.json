@@ -3,5 +3,8 @@
   "dest": "../../dist/ngx-collapsible-sidebar",
   "lib": {
     "entryFile": "src/public-api.ts"
-  }
+  },
+  "whitelistedNonPeerDependencies": [
+    "ngx-auto-unsubscribe"
+  ]
 }
