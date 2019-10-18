@@ -6,6 +6,9 @@ import {NgxCollapsibleSidebarContentComponent} from './components/ngx-collapsibl
 import {NgxCollapsibleSidebarContainerComponent} from './components/ngx-collapsible-sidebar-container/ngx-collapsible-sidebar-container.component';
 import {HideOnCollapseDirective} from './directives/hide-on-collapse.directive';
 import {CommonModule} from '@angular/common';
+import {TruncatePipe} from './pipes/truncate.pipe';
+import {MatIconModule} from '@angular/material';
+import {RouterModule} from '@angular/router';
 
 const components = [
   NgxCollapsibleSidebarContainerComponent,
@@ -18,10 +21,13 @@ const components = [
 @NgModule({
   declarations: [
     HideOnCollapseDirective,
+    TruncatePipe,
     ...components
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    MatIconModule,
+    RouterModule
   ],
   exports: [
     HideOnCollapseDirective,

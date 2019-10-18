@@ -8,3 +8,4 @@ export class HideOnCollapseDirective {
     renderer.addClass(hostElement.nativeElement, 'hide-on-collapse');
   }
 }
+
