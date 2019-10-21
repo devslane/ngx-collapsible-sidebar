@@ -1,4 +1,4 @@
-<div [routerLink]="path" class="ngx-collapsible-sidebar-item">
+<div [routerLink]="path" class="ngx-collapsible-sidebar-item" [ngClass]="active ? 'active' : ''">
   <div [ngClass]="!collapsed ? 'highlight' : ''" class="header">
 
     <!--    Template Rendering for Collapsed Items-->

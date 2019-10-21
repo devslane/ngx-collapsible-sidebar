@@ -17,6 +17,7 @@ export class NgxCollapsibleSidebarItemComponent implements AfterContentInit {
   @ContentChildren(NgxCollapsibleSidebarSubItemComponent) items: QueryList<NgxCollapsibleSidebarSubItemComponent>;
   highlightColor: string;
   collapsed = true;
+  private active = false;
 
   get color(): string {
     return this.highlightColor;
@@ -37,9 +38,11 @@ export class NgxCollapsibleSidebarItemComponent implements AfterContentInit {
 
   collapse() {
     this.collapsed = true;
+    this.active = false;
   }
 
   expand() {
     this.collapsed = false;
+    this.active = true;
   }
 }
