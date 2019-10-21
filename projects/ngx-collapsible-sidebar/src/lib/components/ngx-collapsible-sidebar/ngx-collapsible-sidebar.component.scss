@@ -8,7 +8,7 @@
   box-sizing: border-box;
 
   &.collapsed {
-    width: 180px;
+    width: 250px;
     -webkit-animation: slide-in 0.5s forwards;
     animation: slide-in 0.5s forwards;
 
@@ -18,7 +18,7 @@
   }
 
   &.expanded {
-    width: 65px;
+    width: 60px;
     -webkit-animation: slide-out 0.5s forwards;
     animation: slide-out 0.5s forwards;
 
@@ -29,25 +29,25 @@
 
   @-webkit-keyframes slide-out {
     100% {
-      width: 180px;
+      width: 250px;
     }
   }
 
   @keyframes slide-out {
     100% {
-      width: 180px;
+      width: 250px;
     }
   }
 
   @-webkit-keyframes slide-in {
     100% {
-      width: 65px;
+      width: 60px;
     }
   }
 
   @keyframes slide-in {
     100% {
-      width: 65px;
+      width: 60px;
     }
   }
 }

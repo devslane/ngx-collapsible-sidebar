@@ -1,7 +1,12 @@
 .ngx-collapsible-sidebar-sub-item {
   outline: none;
+  padding: 10px;
 
-  &:not(.active) span {
+  p {
+    margin: 0 auto 0 20px;
+  }
+
+  &:not(.active) p {
     color: black !important;
   }
 }
