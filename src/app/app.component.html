@@ -1,33 +1,27 @@
 <ngx-collapsible-sidebar-container>
-  <ngx-collapsible-sidebar highlightColor="blue" [collapsed]="collapse">
-    <ngx-collapsible-sidebar-item title="Demo1 Heading" icon="add" path="/page1">
+  <ngx-collapsible-sidebar highlightColor="#10395e" [collapsed]="collapse">
+    <ngx-collapsible-sidebar-item path="/page1">
       <ng-template ngxCollapsedSidebarItem>
-        <mat-icon>delete</mat-icon>
+        <mat-icon>home</mat-icon>
       </ng-template>
-      <ng-template ngxExpandedSidebarItem>Hello this is test</ng-template>
-      <ngx-collapsible-sidebar-sub-item title="User1" path="user1">
-      </ngx-collapsible-sidebar-sub-item>
-      <ngx-collapsible-sidebar-sub-item title="User2" path="user2">
-      </ngx-collapsible-sidebar-sub-item>
-      <ngx-collapsible-sidebar-sub-item title="User3" path="user3">
-      </ngx-collapsible-sidebar-sub-item>
+      <ng-template ngxExpandedSidebarItem>Home</ng-template>
     </ngx-collapsible-sidebar-item>
-    <ngx-collapsible-sidebar-item title="Demo2" icon="add" path="/page2">
+    <ngx-collapsible-sidebar-item title="Gaps" icon="schedule" path="/page2">
     </ngx-collapsible-sidebar-item>
-    <ngx-collapsible-sidebar-item title="Demo3" icon="add" path="/page3">
-      <ngx-collapsible-sidebar-sub-item title="User1" path="user1">
-      </ngx-collapsible-sidebar-sub-item>
-      <ngx-collapsible-sidebar-sub-item title="User2" path="user2">
-      </ngx-collapsible-sidebar-sub-item>
-      <ngx-collapsible-sidebar-sub-item title="User3" path="user3">
-      </ngx-collapsible-sidebar-sub-item>
+    <ngx-collapsible-sidebar-item title="Hotels" icon="local_hotel" path="/page3">
     </ngx-collapsible-sidebar-item>
-    <ngx-collapsible-sidebar-item title="Demo4" icon="add" path="/page4">
-      <ngx-collapsible-sidebar-sub-item title="User1" path="user1">
+    <ngx-collapsible-sidebar-item title="Stats" icon="equalizer" path="/page4">
+    </ngx-collapsible-sidebar-item>
+    <ngx-collapsible-sidebar-item title="Campaigns" icon="record_voice_over" path="/page5">
+    </ngx-collapsible-sidebar-item>
+    <ngx-collapsible-sidebar-item title="Alerts" icon="notifications_active" path="/page6">
+    </ngx-collapsible-sidebar-item>
+    <ngx-collapsible-sidebar-item title="Profile" icon="account_circle" path="/page7">
+      <ngx-collapsible-sidebar-sub-item title="Personal" path="user1">
       </ngx-collapsible-sidebar-sub-item>
-      <ngx-collapsible-sidebar-sub-item title="User2" path="user2">
+      <ngx-collapsible-sidebar-sub-item title="Payment" path="user2">
       </ngx-collapsible-sidebar-sub-item>
-      <ngx-collapsible-sidebar-sub-item title="User3" path="user3">
+      <ngx-collapsible-sidebar-sub-item title="Billing" path="user3">
       </ngx-collapsible-sidebar-sub-item>
     </ngx-collapsible-sidebar-item>
   </ngx-collapsible-sidebar>

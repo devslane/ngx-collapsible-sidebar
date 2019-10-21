@@ -1,3 +1,20 @@
-.row {
-  display: flex;
+::ng-deep {
+  .ngx-collapsible-sidebar {
+    background: #10395e;
+  }
+
+  .ngx-collapsible-sidebar-item {
+    &.active {
+      background-color: white;
+      border-radius: 4px;
+
+      .ngx-collapsible-sidebar-item-title, .ngx-collapsible-sidebar-item-icon {
+        color: #10395e !important;
+      }
+    }
+
+    .ngx-collapsible-sidebar-item-title, .ngx-collapsible-sidebar-item-icon {
+      color: white !important;
+    }
+  }
 }
