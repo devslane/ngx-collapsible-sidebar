@@ -13,11 +13,15 @@ import {AutoUnsubscribe} from 'ngx-auto-unsubscribe';
 export class NgxCollapsibleSidebarComponent implements AfterContentInit, OnDestroy {
   @Input() selectedItemRoute: string;
   @Input() collapsed: boolean;
+  @Input() highlightColor: string;
   @ContentChildren(NgxCollapsibleSidebarItemComponent) items: QueryList<NgxCollapsibleSidebarItemComponent>;
 
   constructor(private router: Router) {}
 
   ngAfterContentInit(): void {
+    this.items.forEach(item => {
+      item.color = this.highlightColor;
+    });
     if (this.selectedItemRoute) {
       this.router.navigate([this.selectedItemRoute]);
     }

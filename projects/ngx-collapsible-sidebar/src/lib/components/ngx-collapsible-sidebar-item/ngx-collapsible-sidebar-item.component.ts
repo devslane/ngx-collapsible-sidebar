@@ -15,7 +15,19 @@ export class NgxCollapsibleSidebarItemComponent implements AfterContentInit {
   @ContentChild(ExpandedSidebarItemDirective, {static: false, read: TemplateRef}) expandedItem: TemplateRef<any>;
   @Input() path: string;
   @ContentChildren(NgxCollapsibleSidebarSubItemComponent) items: QueryList<NgxCollapsibleSidebarSubItemComponent>;
+  highlightColor: string;
   collapsed = true;
+
+  get color(): string {
+    return this.highlightColor;
+  }
+
+  set color(value: string) {
+    this.highlightColor = value;
+    this.items.forEach(item => {
+      item.color = value;
+    });
+  }
 
   ngAfterContentInit(): void {
     this.items.forEach(item => {

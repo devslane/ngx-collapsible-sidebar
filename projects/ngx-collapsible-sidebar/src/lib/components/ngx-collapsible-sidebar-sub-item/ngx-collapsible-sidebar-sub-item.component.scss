@@ -1,10 +1,9 @@
 .ngx-collapsible-sidebar-sub-item {
   outline: none;
-}
 
-.active span {
-  font-weight: bold;
+  &:not(.active) span {
+    color: black !important;
+  }
 }
-
 
 

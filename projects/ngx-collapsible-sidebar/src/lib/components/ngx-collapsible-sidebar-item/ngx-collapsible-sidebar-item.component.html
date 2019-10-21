@@ -3,7 +3,7 @@
 
     <!--    Template Rendering for Collapsed Items-->
     <ng-container *ngIf="!collapsedItem">
-      <mat-icon color="primary">{{icon}}</mat-icon>
+      <mat-icon class="ngx-collapsible-sidebar-item-icon" [ngStyle]="{color: collapsed ? 'black' : color}">{{icon}}</mat-icon>
     </ng-container>
     <ng-container *ngIf="collapsedItem">
       <div>
@@ -13,7 +13,8 @@
 
     <!--    Template Rendering for Expanded Items-->
     <ng-container *ngIf="!expandedItem">
-      <span ngxHideOnCollapse>{{title | truncate: 10}}</span>
+      <span class="ngx-collapsible-sidebar-item-title" [ngStyle]="{color: collapsed ? 'black' : color}"
+            ngxHideOnCollapse>{{title | truncate: 10}}</span>
     </ng-container>
     <ng-container *ngIf="expandedItem">
       <div ngxHideOnCollapse>

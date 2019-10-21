@@ -8,4 +8,5 @@ import {Component, Input} from '@angular/core';
 export class NgxCollapsibleSidebarSubItemComponent {
   @Input() title: string;
   @Input() path: string;
+  color: string;
 }

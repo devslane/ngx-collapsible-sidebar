@@ -1,4 +1,4 @@
 <div (click)="$event.stopPropagation()" [routerLink]="path" class="ngx-collapsible-sidebar-sub-item"
      routerLinkActive="active">
-  <span>{{title}}</span>
+  <span [ngStyle]="{color: color}">{{title}}</span>
 </div>

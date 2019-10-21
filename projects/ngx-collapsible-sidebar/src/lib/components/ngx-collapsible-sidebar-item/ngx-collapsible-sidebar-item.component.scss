@@ -11,10 +11,6 @@
     @include fx-layout-with-gap(row, 5px);
     @include fx-layout-alignment(flex-start, center);
 
-    &.highlight {
-      background-color: pink;
-    }
-
     span {
       min-width: 105px;
     }
