@@ -23,6 +23,8 @@
     </ng-container>
   </div>
   <div *ngIf="!collapsed && items.length" class="content" ngxHideOnCollapse>
+    <ul>
     <ng-content></ng-content>
+    </ul>
   </div>
 </div>

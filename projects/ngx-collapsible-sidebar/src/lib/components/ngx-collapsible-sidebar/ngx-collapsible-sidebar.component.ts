@@ -11,7 +11,6 @@ import {AutoUnsubscribe} from 'ngx-auto-unsubscribe';
   styleUrls: ['./ngx-collapsible-sidebar.component.scss']
 })
 export class NgxCollapsibleSidebarComponent implements AfterContentInit, OnDestroy {
-  @Input() selectedItemRoute: string;
   @Input() collapsed: boolean;
   @Input() highlightColor: string;
   @ContentChildren(NgxCollapsibleSidebarItemComponent) items: QueryList<NgxCollapsibleSidebarItemComponent>;
@@ -22,9 +21,6 @@ export class NgxCollapsibleSidebarComponent implements AfterContentInit, OnDestr
     this.items.forEach(item => {
       item.color = this.highlightColor;
     });
-    if (this.selectedItemRoute) {
-      this.router.navigate([this.selectedItemRoute]);
-    }
     this.router.events.pipe(filter(event => event instanceof NavigationEnd))
       .subscribe((event: any) => this.updateSelectedItem(event.url));
   }
