@@ -2,9 +2,11 @@
   <ngx-collapsible-sidebar highlightColor="#10395e" [collapsed]="collapse">
     <ngx-collapsible-sidebar-item path="/page1">
       <ng-template ngxCollapsedSidebarItem>
-        <mat-icon>home</mat-icon>
+        <mat-icon class="custom-icon">home</mat-icon>
       </ng-template>
-      <ng-template ngxExpandedSidebarItem>Home</ng-template>
+      <ng-template ngxExpandedSidebarItem>
+        <span class="custom-text">Home</span>
+      </ng-template>
     </ngx-collapsible-sidebar-item>
     <ngx-collapsible-sidebar-item title="Gaps" icon="schedule" path="/page2">
     </ngx-collapsible-sidebar-item>

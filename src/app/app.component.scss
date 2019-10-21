@@ -8,12 +8,12 @@
       background-color: white;
       border-radius: 4px;
 
-      .ngx-collapsible-sidebar-item-title, .ngx-collapsible-sidebar-item-icon {
+      .custom-icon, .custom-text, .ngx-collapsible-sidebar-item-title, .ngx-collapsible-sidebar-item-icon {
         color: #10395e !important;
       }
     }
 
-    .ngx-collapsible-sidebar-item-title, .ngx-collapsible-sidebar-item-icon {
+    .custom-icon, .custom-text, .ngx-collapsible-sidebar-item-title, .ngx-collapsible-sidebar-item-icon {
       color: white !important;
     }
   }
